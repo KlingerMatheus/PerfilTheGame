@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: Bahnschrift;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+    /* filter: blur(3px); */
+}
+
+h2 {
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    color: rgb(50, 50, 50);
+}
+
+/* Início Modal */
+
+.modal {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.modal .modalContainer {
+    background: #fff;
+    width: 30%;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px 1px #555;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+}
+
+.modal .titulo {
+    border-bottom: 1px solid rgb(220, 220, 220);
+    font-size: 24px;
+}
+
+.modal .corpo {
+    text-indent: 15px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(245, 245, 245);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.modal .botoes button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.1s ease;
+    outline: none;
+    padding: 16px 0px;
+}
+
+.modal .botoes button:hover {
+    color: rgba(30,60,255);
+}
+
+/* Fim Modal */
+
+i {
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Início Tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px 20px;
+    max-width: fit-content;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgb(0,0,0, 0.1);
+    max-width: fit-content;
+}
+
+table tbody tr td:first-child{
+    text-align: left;    
+    border-radius: 4px 0px 0px 4px;
+}
+
+table #listaParticipantes tr td:first-child{
+    text-align: right;    
+    border-radius: 4px 0px 0px 4px;
+    padding: 10px 0px;
+}
+
+table tbody tr td:last-child{
+    text-align: left;    
+    border-radius: 0px 4px 4px 0px;
+}
+
+table #listaPontuacao tr td:last-child{
+    text-align: right;    
+    border-radius: 0px 4px 4px 0px;
+}
+
+.adicionarBt {
+    background-color: green;
+    width: 100%;
+    border: none;
+    position: relative;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(0,150,0);
+    cursor: pointer;
+    transition: 0.1s ease;
+    outline: none;
+}
+
+.adicionarBt::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 0px;
+    left: 100%;
+    transition: 0.1s ease-in-out;
+}
+
+.adicionarBt:hover::before {
+    left: 0%;
+}
+/* Fim Tabelas */
+
+/* Início Form */
+
+.modal .corpo input, .modal .corpo select {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    position: relative;
+    outline: none;
+    width: 100%;
+    font-family: Bahnschrift;
+    font-size: 15px;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.modal .corpo div label {
+    margin-right: 15px;
+}
+
+.modal .corpo div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Fim Form */
+
+#listaErros td {
+    padding: 10px;
+    font-size: 25px;
+}
+
+#grupo1 {
+    width: 40%;
+}
+
+#grupo2 {
+    width: 18%;
+}
+
+#grupo3 {
+    width: 16%;
+}
+
+#btnsGame {
+    position: fixed;
+    background: rgb(200,200,200);
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#btnsGame .botoes {
+    width: 25%;
+    margin: auto;
+}
+
+#btnsGame .botoes button {    
+    outline: none; 
+    border-top: none; 
+    border-bottom: 2px solid;
+    padding: 8px 35px;
+    font-size: 32px;
+}
+
+
+select option:disabled {
+    font-weight: bold;
+    background-color: rgb(200,20,20);
+    color: rgb(100,0,0);
+}
+
+.pointsLabel {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.modalDetails {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    justify-content: left;
+    margin-bottom: -14px;
+    width: 100%;
+}
+
+.modalDetails p {
+    color: rgb(180,180,180);
+    font-size: small;
+    font-weight: 100;
+    margin: 1px;
+}
+
+#listaDicas tr td:first-child {
+    width: 5px;
+    padding: 5px;
+    background-color: rgba(0,80,255, 0.4);
+}
